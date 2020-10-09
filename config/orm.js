@@ -1,14 +1,12 @@
-// Import MySQL connection.
-var connection = require("../config/connection.js");
-
-orm.selectAll
+// Import MySQL connection
+const connection = require("../config/connection.js");
 
 //INSERT INTO ice cream (ice cream_name, devoured)
 //VALUES ("chocolate ice cream", false);
 function printQuestionMarks(num) {
-    var arr = [];
+    let arr = [];
   
-    for (var i = 0; i < num; i++) {
+    for (let i = 0; i < num; i++) {
       arr.push("?");
     }
   
@@ -17,11 +15,11 @@ function printQuestionMarks(num) {
   
   // Helper function to convert object key/value pairs to SQL syntax
   function objToSql(ob) {
-    var arr = [];
+    let arr = [];
   
     // loop through the keys and push the key/value as a string int arr
-    for (var key in ob) {
-      var value = ob[key];
+    for (let key in ob) {
+      let value = ob[key];
  
       if (Object.hasOwnProperty.call(ob, key)) {
       
@@ -39,7 +37,7 @@ function printQuestionMarks(num) {
 
 const orm = {
     all: function (table, cb) {
-        var queryString = "SELECT * FROM " + table + ";";
+        let queryString = "SELECT * FROM " + table + ";";
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
@@ -48,7 +46,7 @@ const orm = {
         });
     },
     create: function (table, cols, vals, cb) {
-        var queryString = "INSERT INTO " + table;
+        let queryString = "INSERT INTO " + table;
 
         queryString += " (";
         queryString += cols.toString();
@@ -68,7 +66,7 @@ const orm = {
         });
     },
     update: function(table, objColVals, condition, cb) {
-        var queryString = "UPDATE " + table;
+        let queryString = "UPDATE " + table;
     
         queryString += " SET ";
         queryString += objToSql(objColVals);
@@ -86,7 +84,7 @@ const orm = {
       },
 
     delete: function (table, condition, cb) {
-        var queryString = "DELETE";
+        let queryString = "DELETE";
 
         queryString += " FROM ";
         queryString += table;

@@ -1,4 +1,4 @@
-# 🍦 Scoops
+# 🍦 Scoops Ice Cream Truck
 
 [CLICK HERE FOR LIVE HEROKU APPLICATION]()
 

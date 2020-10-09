@@ -1,7 +1,7 @@
 // Import the ORM to create functions that will interact with the database
 var orm = require("../config/orm.js");
 
-var iceCream = {
+var icecream = {
     all: function (cb) {
 		orm.all("ice cream", function (res) {
 			cb(res);
@@ -29,5 +29,5 @@ var iceCream = {
 	}
 };
 
-// Export the database functions for the controller (icecream_Controller.js).
-module.exports = iceCream;
+// Export the database functions for the controller (icecream_controller.js).
+module.exports = icecream;

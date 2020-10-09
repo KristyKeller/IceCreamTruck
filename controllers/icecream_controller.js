@@ -1,23 +1,61 @@
-// Set up MySQL connection
-var mysql = require("mysql");
+const express = require("express");
 
-const connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: process.env.MYSQL_PASS,
-  database: "icecream"
+const router = express.Router();
+
+// Import the model (icecream.js) to use its database functions
+const icecream = require("../models/icecream.js");
+
+// Create all our routes and set up logic within those routes where required.
+router.get("/", function(req, res) {
+    icecream.all(function(data) {
+      var hbsObject = {
+        icecream: data
+      };
+      console.log(hbsObject);
+      res.render("index", hbsObject);
+    });
+  });
+
+router.post("/api/icecream/", function(req, res) {
+  icecream.create([
+    "icecream_name", "devoured"
+  ], [
+    req.body.icecream_name, false
+  ], function(result) {
+    // Send back the ID of the new icecream
+    res.json({ id: result.insertId });
+  });
 });
 
-// Make connection
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-  console.log("connected as id " + connection.threadId);
+router.put("/api/icecream/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  console.log("condition", condition);
+
+  icecream.update({
+    devoured: req.body.devoured
+  }, condition, function(result) {
+    if (result.changedRows == 0) {
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
 });
 
+router.delete("/api/icecream/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
 
-// Export connection for ORM to use
-module.exports = connection;
+  console.log("condition", condition);
+
+  iceCream.delete(condition, function(result) {
+    if (result.affectedRows == 0) {
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
+
+// Export routes for server.js to use
+module.exports = router;

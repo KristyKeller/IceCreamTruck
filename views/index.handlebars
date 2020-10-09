@@ -1,18 +1,29 @@
-<h1>Scoops App</h1>
+<img src="/assets/img/.gif" data-animate="/assets/img/.gif"
+	data-state="animate" alt="icecream icon" width="200px" class="gif">
 
+<h1>Scoops Ice Cream Truck</h1>
+<h2>I scream! You scream! We all scream for ice cream! </h2>
+
+<h3> Welcome to the ice cream truck.</h3>
 <ul>
-{{#each iceCream}}
+
+<div class="icecream">
+	<div class="devour-me-answers">
+		<h3>Select your flavor and enjoy!</h3>
+{{#each icecream}}
 
 {{#unless devoured}}
 {{!-- Render undevoured ice cream here --}}
 <li>{{ name }}
-<button data-id={{ id }} class='eatIceCreamBtn'>Devour</button></li>
+<button data-id={{ id }} class='eatIcecreamBtn'>Devour</button></li>
 {{/unless}}
 {{/each}}
+</div>
+</div>
 </ul>
 
 <ul>
-{{#each iceCream}}
+{{#each icecream}}
 {{#if devoured }}
 {{!-- Render devoured ice cream here --}}
 <li>{{ name }}</li>
