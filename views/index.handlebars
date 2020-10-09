@@ -1,0 +1,21 @@
+<h1>Scoops App</h1>
+
+<ul>
+{{#each iceCream}}
+
+{{#unless devoured}}
+{{!-- Render undevoured ice cream here --}}
+<li>{{ name }}
+<button data-id={{ id }} class='eatIceCreamBtn'>Devour</button></li>
+{{/unless}}
+{{/each}}
+</ul>
+
+<ul>
+{{#each iceCream}}
+{{#if devoured }}
+{{!-- Render devoured ice cream here --}}
+<li>{{ name }}</li>
+{{/if}}
+{{/each}}
+</ul>
