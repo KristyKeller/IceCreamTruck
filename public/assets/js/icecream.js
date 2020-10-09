@@ -64,7 +64,7 @@ $(document).ready(function () {
         console.log(newIcecream);
 
         // Send the POST request
-        $.ajax("/api/icecreams", {
+        $.ajax("/api/icecream/", {
             type: "POST",
             data: newIcecream
         }).then(

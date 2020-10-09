@@ -1,7 +1,7 @@
 const express = require('express');
 
 // PORT
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3030;
 
 // Create an instance of the express app
 const app = express();
@@ -25,8 +25,9 @@ app.use(routes);
 
 // Start server to listen to client requests
 app.listen(PORT, function () {
-  console.log("App now listening at localhost:" + PORT);
+  console.log("Server listening on: http://localhost:" + PORT);
 });
+
 
 
 

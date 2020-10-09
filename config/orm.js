@@ -37,8 +37,12 @@ function printQuestionMarks(num) {
 
 const orm = {
     all: function (table, cb) {
+      console.log("inside ORM all");
         let queryString = "SELECT * FROM " + table + ";";
+        console.log(queryString);
         connection.query(queryString, function (err, result) {
+          console.log("Inside connection query");
+          console.log("result");
             if (err) {
                 throw err;
             }

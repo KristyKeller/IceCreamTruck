@@ -5,7 +5,7 @@ const router = express.Router();
 // Import the model (icecream.js) to use its database functions
 const icecream = require("../models/icecream.js");
 
-// Create all our routes and set up logic within those routes where required.
+// Create all routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
     icecream.all(function(data) {
       var hbsObject = {
@@ -14,9 +14,10 @@ router.get("/", function(req, res) {
       console.log(hbsObject);
       res.render("index", hbsObject);
     });
+    // res.render("index", {});
   });
 
-router.post("/api/icecream/", function(req, res) {
+router.post("/api/icecream", function(req, res) {
   icecream.create([
     "icecream_name", "devoured"
   ], [
