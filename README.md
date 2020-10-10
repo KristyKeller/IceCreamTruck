@@ -3,7 +3,6 @@
 [CLICK HERE FOR LIVE HEROKU APPLICATION](https://scoops-ice-cream-truck.herokuapp.com/)
 
 ## Table of Contents
-* [Screenshots](#screenshots)
 
 * [Application Description](#application-description)
 
@@ -11,17 +10,11 @@
 
 * [Usage](#usage)
 
-* [Demo](#demo)
-
 * [Built With](#built-with)
 
 * [License](#license)
 
 * [Questions](#questions)
-
-## Screenshots
-![screenshot2](./Assets/Images/.png)
-![screenshot3](./Assets/Images/.png)
 
 ## Application Description
 
@@ -42,10 +35,6 @@ OR
 Use the live application via the Heroku link provided above
 
 ```
-
-## Demo
-![gif]()
-
 ## Built With
 * Heroku
 * MySQL
