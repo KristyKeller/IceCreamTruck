@@ -2,7 +2,7 @@
 require('dotenv').config();
 var mysql = require("mysql");
 var connection;
-// mysql://efa2w3nh3rd9p18x:ga4qfthbdxlc1366@iwqrvsv8e5fz4uni.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/hayjmcznfu4swcex
+
 if(process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {

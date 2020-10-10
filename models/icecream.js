@@ -2,28 +2,25 @@
 var orm = require("../config/orm.js");
 
 var icecream = {
-    all: function (cb) {
-		orm.all("icecream", function (res) {
+    selectAll: function (table, cb) {
+		orm.selectAll("icecream", function (res) {
 			console.log("here");
 			cb(res);
 		});
     },
     
-	create: function (cols, vals, cb) {
-        console.log("mode ice cream created"),
-        orm.create("icecream", cols, vals, function (res) {
-            cb(res);
-            
+	insertOne: function(colName, valOfCol, cb) {
+		orm.insertOne("icecream", colName, valOfCol, function(res) {
+		  cb(res);
 		});
-    },
-     
-   update: function (objColVals, condition, cb) {
-		orm.update("icecream", objColVals, condition, function (res) {
-			cb(res);
+	  },
+	  updateOne: function(valOfCol, condition, cb) {
+		orm.updateOne("icecream", valOfCol, condition, function(res) {
+		  cb(res);
 		});
-    },
+	  },
     
-	delete: function (condition, cb) {
+	deleteOne: function (condition, cb) {
 		orm.delete("icecream", condition, function (res) {
 			cb(res);
 		});

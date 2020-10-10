@@ -1,40 +1,34 @@
 var express = require("express");
-
+var icecream = require("../models/icecream.js");
 var router = express.Router();
 
-// Import the model (icecream.js) to use its database functions
-var icecream = require("../models/icecream.js");
-
 // Create all routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-    icecream.all(function(data) {
-      var hbsObject = {
-        icecream: data
-      };
-      console.log(hbsObject);
-      res.render("index", hbsObject);
-    });
-  });
-
-router.post("/api/icecream", function(req, res) {
-  icecream.create([
-    "icecream_name", "devoured"
-  ], [
-    req.body.icecream_name, false
-  ], function(result) {
-    // Send back the ID of the new icecream
-    res.json({ id: result.insertId });
+router.get("/", function (req, res) {
+  icecream.selectAll("icecream", function (data) {
+    var icecreamDataObject = {
+      icecream: data
+    };
+    console.log(icecreamDataObject);
+    res.render("index", icecreamDataObject);
   });
 });
 
-router.put("/api/icecream/:id", function(req, res) {
+router.post("/api/icecream", function (req, res) {
+  icecream.insertOne("icecream_name", [req.body.icecream], function (err, result) {
+    if (err) {
+      console.log(err);
+    }
+    res.redirect("/");
+  });
+});
+
+router.put("/api/icecream/:id", function (req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
-  icecream.update({
-    devoured: req.body.devoured
-  }, condition, function(result) {
+  icecream.updateOne({devoured: req.body.devoured }, 
+    condition, function (result) {
     if (result.changedRows == 0) {
       return res.status(404).end();
     } else {
@@ -43,12 +37,12 @@ router.put("/api/icecream/:id", function(req, res) {
   });
 });
 
-router.delete("/api/icecream/:id", function(req, res) {
+router.delete("/api/icecream/:id", function (req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
-  icecream.delete(condition, function(result) {
+  icecream.deleteOne(condition, function (result) {
     if (result.affectedRows == 0) {
       return res.status(404).end();
     } else {
