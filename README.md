@@ -23,8 +23,8 @@
 ![screenshot2](./Assets/Images/.png)
 ![screenshot3](./Assets/Images/.png)
 
-```
 ## Application Description
+
 A ice cream logger app with MySQL, Node, Express, Handlebars and a homemade ORM that lets users input the names of ice cream flavors they'd like to eat. Whenever a user submits a ice cream flavor, the app will display the ice cream flavor on the page.
 Each ice cream flavor in the waiting area also has a Devour button. When the user clicks Devour, the ice cream will move to the right side of the page. This app stores every ice cream in a database, whether devoured or not.
 
