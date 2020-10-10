@@ -1,11 +1,13 @@
-DROP DATABASE IF EXISTS icecream_db;
-CREATE DATABASE icecream_db;
-USE icecream_db;
+DROP DATABASE IF EXISTS icecream;
+CREATE DATABASE icecream;
+USE icecream;
 
 CREATE TABLE icecream
 (
-    id int NOT NULL AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
-    devoured BOOLEAN DEFAULT false,
+    id INT NOT NULL AUTO_INCREMENT,
+    icecream_name VARCHAR(100) NOT NULL,
+    devoured BOOLEAN,
     PRIMARY KEY (id)
 );
+
+SELECT * FROM icecream;

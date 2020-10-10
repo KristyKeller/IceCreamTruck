@@ -1,9 +1,9 @@
-const express = require("express");
+var express = require("express");
 
-const router = express.Router();
+var router = express.Router();
 
 // Import the model (icecream.js) to use its database functions
-const icecream = require("../models/icecream.js");
+var icecream = require("../models/icecream.js");
 
 // Create all routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
@@ -14,7 +14,6 @@ router.get("/", function(req, res) {
       console.log(hbsObject);
       res.render("index", hbsObject);
     });
-    // res.render("index", {});
   });
 
 router.post("/api/icecream", function(req, res) {
@@ -49,7 +48,7 @@ router.delete("/api/icecream/:id", function(req, res) {
 
   console.log("condition", condition);
 
-  iceCream.delete(condition, function(result) {
+  icecream.delete(condition, function(result) {
     if (result.affectedRows == 0) {
       return res.status(404).end();
     } else {

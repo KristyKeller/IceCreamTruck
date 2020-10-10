@@ -4,9 +4,9 @@ const connection = require("../config/connection.js");
 //INSERT INTO ice cream (ice cream_name, devoured)
 //VALUES ("chocolate ice cream", false);
 function printQuestionMarks(num) {
-    let arr = [];
+    var arr = [];
   
-    for (let i = 0; i < num; i++) {
+    for (var i = 0; i < num; i++) {
       arr.push("?");
     }
   
@@ -15,11 +15,11 @@ function printQuestionMarks(num) {
   
   // Helper function to convert object key/value pairs to SQL syntax
   function objToSql(ob) {
-    let arr = [];
+    var arr = [];
   
     // loop through the keys and push the key/value as a string int arr
-    for (let key in ob) {
-      let value = ob[key];
+    for (var key in ob) {
+      var value = ob[key];
  
       if (Object.hasOwnProperty.call(ob, key)) {
       
@@ -37,12 +37,9 @@ function printQuestionMarks(num) {
 
 const orm = {
     all: function (table, cb) {
-      console.log("inside ORM all");
-        let queryString = "SELECT * FROM " + table + ";";
+        var queryString = "SELECT * FROM " + table + ";";
         console.log(queryString);
         connection.query(queryString, function (err, result) {
-          console.log("Inside connection query");
-          console.log("result");
             if (err) {
                 throw err;
             }
@@ -50,7 +47,7 @@ const orm = {
         });
     },
     create: function (table, cols, vals, cb) {
-        let queryString = "INSERT INTO " + table;
+        var queryString = "INSERT INTO " + table;
 
         queryString += " (";
         queryString += cols.toString();
@@ -70,7 +67,7 @@ const orm = {
         });
     },
     update: function(table, objColVals, condition, cb) {
-        let queryString = "UPDATE " + table;
+        var queryString = "UPDATE " + table;
     
         queryString += " SET ";
         queryString += objToSql(objColVals);
@@ -88,14 +85,13 @@ const orm = {
       },
 
     delete: function (table, condition, cb) {
-        let queryString = "DELETE";
+        var queryString = "DELETE";
 
         queryString += " FROM ";
         queryString += table;
         queryString += " WHERE ";
         queryString += condition;
         queryString += " ;";
-        //queryString += condition;
 
         console.log("this is the query string" + queryString);
         connection.query(queryString, function (err, result) {

@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     $(".gif").on("click", function () {
         var state = $(this).attr("data-state");
-
         if (state === "animate") {
             $(this).attr("src", $(this).attr("data-still"));
             $(this).attr("data-state", "still");
@@ -11,6 +10,7 @@ $(document).ready(function () {
             $(this).attr("data-state", "animate");
         }
     });
+
 
     $(".devour-me").on("click", function (event) {
         var id = $(this).data("id");
@@ -31,8 +31,6 @@ $(document).ready(function () {
             data: newDevouredState
         }).then(
             function () {
-                //console.log("changed devoured to", newDevoured);
-                // Reload the page to get the updated list
                 location.reload();
             }
         );
@@ -53,7 +51,6 @@ $(document).ready(function () {
     });
 
     $("#submitButton").on("click", function (event) {
-        // Make sure to preventDefault on a submit event
         event.preventDefault();
 
         var newIcecream = {
@@ -69,8 +66,7 @@ $(document).ready(function () {
             data: newIcecream
         }).then(
             function () {
-                console.log("created new icecream");
-                // Reload the page to get the updated list
+                console.log("created new ice cream");
                 location.reload();
             }
         );

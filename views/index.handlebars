@@ -1,32 +1,52 @@
-<img src="/assets/images/icecream.gif" data-animate="/assets/images/icecream.gif"
-	data-state="animate" alt="icecream icon" width="200px" class="gif">
+<img src="/assets/images/icecream.gif" data-still="/assets/images/icecream.gif"
+	data-animate="/assets/images/icecream.gif" data-state="animate" alt="icecream gif" width="200px" class="gif">
 
 <h1>Scoops Ice Cream Truck</h1>
-<h2>I scream! You scream! We all scream for ice cream! </h2>
+<h4>I scream! You scream! We all scream for ice cream! </h4>
 
 <h3> Welcome to the ice cream truck.</h3>
-<ul>
+
 
 <div class="icecream">
 	<div class="devour-me-answers">
-		<h3>Select your flavor and enjoy!</h3>
-{{#each icecream}}
+		<h3>You've Ordered:</h3>
+		{{#each icecream}}
+		{{#unless devoured}}
+		{{!-- Render devoured ice cream here --}}
+		<h4>{{this.id}}. {{this.icecream_name}}</h4>
+		<button class="devour-me" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Devour</button>
+		{{/unless}}
+		{{/each}}
+	</div>
 
-{{#unless devoured}}
-{{!-- Render undevoured ice cream here --}}
-<li>{{ name }}
-<button data-id={{ id }} class='eatIcecreamBtn'>Devour</button></li>
-{{/unless}}
-{{/each}}
+<div class="icecream">
+	<div class="devour-me-answers">
+		<h3>Up for grabs:</h3>
+		{{#each icecream}}
+			{{#unless devoured}}
+				<h4>{{this.id}}. {{this.icecream_name}}</h4>
+				<button class="devour-me" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Devour me!!</button>
+			{{/unless}}
+		{{/each}}
+	</div>
+	<div class="delete-me-answers">
+		<h3>Finshed:</h3>
+		{{#each icecream}}
+			{{#if devoured}}
+				<h4>{{this.id}}. {{this.icecream_name}}</h4>
+				<button class="delete-me" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Throw out!!</button>
+			{{/if}}
+		{{/each}}
+	</div>
 </div>
-</div>
-</ul>
 
-<ul>
-{{#each icecream}}
-{{#if devoured }}
-{{!-- Render devoured ice cream here --}}
-<li>{{ name }}</li>
-{{/if}}
-{{/each}}
-</ul>
+<h3>Pick your ice cream flavor and enjoy!</h3>
+<form class="create-form">
+
+	<div class="form-group">
+		<label for="ba">What flavor ice cream would you like?</label>
+		<input type="text" id="ba" name="icecream_name">
+	</div>
+
+	<button type="submit" id="submitButton">Place Order</button>
+</form>
