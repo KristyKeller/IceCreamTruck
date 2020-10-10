@@ -37,7 +37,7 @@ npm i
 ```
 Run "node server.js" to start then navigate to a browser window to localhost:8080
 
-                                     OR
+OR
                                      
 Use the live application via the Heroku link provided above
 
