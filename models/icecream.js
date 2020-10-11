@@ -18,13 +18,7 @@ var icecream = {
 		orm.updateOne("icecream", valOfCol, condition, function(res) {
 		  cb(res);
 		});
-	  },
-    
-	deleteOne: function (condition, cb) {
-		orm.delete("icecream", condition, function (res) {
-			cb(res);
-		});
-	}
+	  }
 };
 
 // Export the database functions for the controller (icecream_controller.js).

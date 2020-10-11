@@ -1,50 +1,44 @@
   
 <div class="container-flex">
-<div><img src="../images/icecream.gif" alt="Ice Cream Dancing"</div>
+<img src="../images/icecream.gif" alt="Ice Cream Dancing" width="300" height="300">
 <h1>Scoops Ice Cream Truck</h1>
-<h5>I scream! You scream! We all scream for ice cream!</h5>
 <br>
 <br>
-<div class="icecream">
-	<div class="devour-me-answers">
-		<h3>You've Ordered:</h3>
-		{{#each icecream}}
-		{{#unless devoured}}
-		{{!-- Render devoured ice cream here --}}
-		<h4>{{this.id}}. {{this.icecream_name}}</h4>
-		<button class="devour-me" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Devour</button>
-		{{/unless}}
-		{{/each}}
-	</div>
 
-<div class="icecream">
-	<div class="devour-me-answers">
-		<h3>Up for grabs:</h3>
-		{{#each icecream}}
-			{{#unless devoured}}
-				<h4>{{this.id}}. {{this.icecream_name}}</h4>
-				<button class="devour-me" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Devour me!!</button>
-			{{/unless}}
-		{{/each}}
-	</div>
-	<div class="delete-me-answers">
-		<h3>Finshed:</h3>
-		{{#each icecream}}
-			{{#if devoured}}
-				<h4>{{this.id}}. {{this.icecream_name}}</h4>
-				<button class="delete-me" data-id="{{this.id}}" data-devoured="{{this.devoured}}">Throw out!!</button>
-			{{/if}}
-		{{/each}}
-	</div>
+<div class="row d-flex icecream-div">
+        <div class="col">
+            <ul id="icecream-to-devour">
+                <h3>You Ordered:</h3>
+                {{#each icecream}}
+                {{#unless devoured}}
+                <li>
+                    <p>{{icecream_name}} <button class="devour btn btn-danger btn-sm" data-icecreamid="{{id}}">Devour
+                            it!</button></p>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="col">
+            <ul id="icecream-devoured">
+                <h3>You Finished Eating:</h3>
+                {{#each icecream}}
+                {{#if devoured}}
+                <li>
+                    <p>{{icecream_name}}</p>
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="icecream-input">
+        <form action="/api/icecream" method="POST">
+            <textarea type="text" name="icecream" id="icecream-input" class="col-md-3" placeholder="Order Ice Cream Here"></textarea>
+			<h3>Order your ice flavor and enjoy!</h3>
+            <button type="submit" id="add-icecream" class="btn btn-primary btn-lg">Place Order</button>
+        </form>
+    </div>
+
 </div>
-
-<h3>Pick your ice cream flavor and enjoy!</h3>
-<form class="create-form">
-
-	<div class="form-group">
-		<label for="ba">What flavor ice cream would you like?</label>
-		<input type="text" id="ba" name="icecream_name">
-	</div>
-
-	<button type="submit" id="submitButton">Place Order</button>
-</form>
