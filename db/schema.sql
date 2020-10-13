@@ -5,6 +5,6 @@ USE hayjmcznfu4swcex;
 CREATE TABLE icecream (
 	id int NOT NULL AUTO_INCREMENT,
 	icecream_name varchar(100) NOT NULL,
-	devoured BOOLEAN DEFAULT false,
+	devoured BOOLEAN DEFAULT TRUE,
 	PRIMARY KEY (id)
 );

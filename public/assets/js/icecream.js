@@ -1,10 +1,8 @@
 $(document).ready(function () {
-
-    $(".icecream-devoured").on("click", function (event) {
-        var id = $(this).data("id");
+    $(".devour").on("click", function (event) {
+        console.log("This is a test for devour btn");
+        var id = $(this).data("icecreamid");
         var currentDevouredState = $(this).data("devoured");
-
-        console.log("Look here:" + currentDevouredState);
 
         var newDevoured = $(this).data("devoured");
         console.log(newDevoured);
@@ -23,27 +21,5 @@ $(document).ready(function () {
             }
         );
 
-    });
-
-    $("#submitButton").on("click", function (event) {
-        event.preventDefault();
-
-        var newIcecream = {
-            icecream_name: $("#ba").val().trim(),
-            devoured: false
-        };
-
-        console.log(newIcecream);
-
-        // Send the POST request
-        $.ajax("/api/icecream/", {
-            type: "POST",
-            data: newIcecream
-        }).then(
-            function () {
-                console.log("created new ice cream");
-                location.reload();
-            }
-        );
     });
 });
