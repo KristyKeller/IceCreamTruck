@@ -83,25 +83,6 @@ var orm = {
       cb(result);
     });
   },
-
-  deleteOne: function (table, condition, cb) {
-    var queryString = "DELETE";
-
-    queryString += " FROM ";
-    queryString += table;
-    queryString += " WHERE ";
-    queryString += condition;
-    queryString += " ;";
-
-    console.log("this is the query string" + queryString);
-    connection.query(queryString, function (err, result) {
-      if (err) {
-        throw err;
-      }
-
-      cb(result);
-    });
-  }
 };
 
 // Export the orm object for the model (icecream.js) 

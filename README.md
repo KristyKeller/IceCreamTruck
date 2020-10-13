@@ -3,6 +3,7 @@
 [CLICK HERE FOR LIVE HEROKU APPLICATION](https://scoops-ice-cream-truck.herokuapp.com/)
 
 ## Table of Contents
+* [Screenshots](#screenshots)
 
 * [Application Description](#application-description)
 
@@ -15,6 +16,9 @@
 * [License](#license)
 
 * [Questions](#questions)
+
+## Screenshots 
+![screenshot1](./assets/images/screenshot-1.png)
 
 ## Application Description
 

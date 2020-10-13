@@ -1,18 +1,6 @@
 $(document).ready(function () {
 
-    $(".gif").on("click", function () {
-        var state = $(this).attr("data-state");
-        if (state === "animate") {
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");
-        } else {
-            $(this).attr("src", $(this).attr("data-animate"));
-            $(this).attr("data-state", "animate");
-        }
-    });
-
-
-    $(".devour-me").on("click", function (event) {
+    $(".icecream-devoured").on("click", function (event) {
         var id = $(this).data("id");
         var currentDevouredState = $(this).data("devoured");
 
@@ -35,19 +23,6 @@ $(document).ready(function () {
             }
         );
 
-    });
-
-    $(".delete-me").on("click", function (event) {
-        var id = $(this).data("id");
-
-        $.ajax({
-            method: "DELETE",
-            url: "/api/icecream/" + id
-        }).then(
-            function () {
-                location.reload();
-            }
-        )
     });
 
     $("#submitButton").on("click", function (event) {
