@@ -11,6 +11,8 @@
 
 * [Usage](#usage)
 
+* [Demo](#demo)
+
 * [Built With](#built-with)
 
 * [License](#license)
@@ -19,6 +21,7 @@
 
 ## Screenshots 
 ![screenshot1](./assets/images/screenshot-1.png)
+![screenshot2](./assets/images/Screenshot-2.png)
 
 ## Application Description
 
@@ -39,6 +42,9 @@ OR
 Use the live application via the Heroku link provided above
 
 ```
+## Demo
+![scoops](https://media.giphy.com/media/HFxjTEPfzRAYH7b1lY/giphy.gif)
+
 ## Built With
 * Heroku
 * MySQL
