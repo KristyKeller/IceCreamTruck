@@ -7,6 +7,7 @@ body {
 }
 
 h1 { 
+    font-family: 'Fredoka One';
     color: white;
     -webkit-text-fill-color: white; 
     -webkit-text-stroke-width: 1px;
@@ -14,24 +15,16 @@ h1 {
     text-shadow: 2px 2px 4px #000000;
 }
 
-
-h3 {
+h5 {
     color: black;
+    font-family: 'Fredoka One';
     -webkit-text-fill-color: white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
     margin: 10px;
 }
 
-h4 {
-    color: black;
-    -webkit-text-fill-color: white;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-    margin: 0px;
-}
-
-button {
+#add-icecream {
     margin: 10px;
     padding: 5px 10px;
     color: black;
@@ -40,16 +33,33 @@ button {
     border-radius: 15px;
 }
 html {
+    background-color: rgb(236,121,179);
     margin: 20px;
   }
   html,
   body,
   .container-flex {
     text-align: center;
+    background-color: rgb(236,121,179);
   }
   
   ul {
     list-style-type: none;
   }
-  
+
+  li {
+    padding: 5px;
+    margin: 5px;
+  }
+
+  .col {
+    font-family: 'Fredoka One';
+    color: black;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    margin: 0px;
+  }
+
+
 

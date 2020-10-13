@@ -12,7 +12,7 @@
                 {{#each icecream}}
                 {{#unless devoured}}
                 <li>
-                    <p>{{icecream_name}} <button class="devour btn btn-danger btn-sm" data-icecreamid="{{id}}">Devour
+                    <p>{{icecream_name}} <button class="devour btn btn-dark btn-sm" data-icecreamid="{{id}}">Devour
                             it!</button></p>
                 </li>
                 {{/unless}}
@@ -36,8 +36,8 @@
     <div class="icecream-input">
         <form action="/api/icecream" method="POST">
             <textarea type="text" name="icecream" id="icecream-input" class="col-md-3" placeholder="Order Ice Cream Here"></textarea>
-			<h3>Order your ice flavor and enjoy!</h3>
-            <button type="submit" id="add-icecream" class="btn btn-primary btn-lg">Place Order</button>
+			<p><button type="submit" id="add-icecream" class="btn btn-primary btn-lg">Place Order</button></p>
+					<p><h5>Order your ice cream flavor and enjoy!</h6></p>
         </form>
     </div>
 

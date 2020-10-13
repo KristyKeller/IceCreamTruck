@@ -1,24 +1,10 @@
--- DROP DATABASE IF EXISTS icecream;
--- CREATE DATABASE icecream;
--- USE icecream;
-
--- CREATE TABLE icecream
--- (
---     id INT NOT NULL AUTO_INCREMENT,
---     icecream_name VARCHAR(100) NOT NULL,
---     devoured BOOLEAN,
---     PRIMARY KEY (id)
--- );
-
--- SELECT * FROM icecream;
+DROP DATABASE IF EXISTS hayjmcznfu4swcex;
 CREATE DATABASE hayjmcznfu4swcex;
 USE hayjmcznfu4swcex;
-CREATE TABLE icecream
-(
-    id INT NOT NULL AUTO_INCREMENT,
-    icecream_name VARCHAR(100) NOT NULL,
-    devoured BOOLEAN,
-    PRIMARY KEY (id)
-);
 
-SELECT * FROM icecream;
+CREATE TABLE icecream (
+	id int NOT NULL AUTO_INCREMENT,
+	icecream_name varchar(100) NOT NULL,
+	devoured BOOLEAN DEFAULT false,
+	PRIMARY KEY (id)
+);

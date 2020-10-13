@@ -1,10 +1,3 @@
-INSERT INTO icecream (icecream_name, devoured)
-VALUES ("Vanilla", true);
-INSERT INTO icecream (icecream_name, devoured)
-VALUES ("Chocolate", true);
-INSERT INTO icecream (icecream_name, devoured)
-VALUES ("Strawberry", true);
-
-SELECT * FROM icecream;
-
-
+INSERT INTO icecream (icecream_name) VALUES ('Vanilla Ice Cream');
+INSERT INTO icecream (icecream_name) VALUES ('Chocolate Ice Cream');
+INSERT INTO icecream (icecream_name) VALUES ('Strawberry Ice Cream');
