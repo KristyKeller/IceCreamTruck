@@ -54,7 +54,6 @@ Use the live application via the Heroku link provided above
 * ORM
 * JSON
 * JQuery 
-* HTML
 * Bootstrap
 
 ## License
