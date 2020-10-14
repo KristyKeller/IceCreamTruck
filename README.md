@@ -35,7 +35,7 @@ npm i
 
 ## Usage 
 ```
-Run "node server.js" to start then navigate to a browser window to localhost:8080
+Run "node server.js" to start then navigate to a browser window to localhost:3030
 
 OR
                                      
