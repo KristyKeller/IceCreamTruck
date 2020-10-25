@@ -1,6 +1,6 @@
 # 🍦 Scoops Ice Cream Truck
 
-[CLICK HERE FOR LIVE HEROKU APPLICATION](https://scoops-ice-cream-truck.herokuapp.com/)
+[CLICK HERE FOR LIVE HEROKU APPLICATION](https://ice-cream-truck.herokuapp.com/)
 
 ## Table of Contents
 * [Screenshots](#screenshots)
